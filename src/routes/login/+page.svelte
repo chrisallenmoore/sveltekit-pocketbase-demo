@@ -1,14 +1,14 @@
 <script lang="ts">
-  import { goto } from "$app/navigation"
-  import { state } from "$lib/stores"
-  let email: String
-  let password: String
+  import { goto } from "$app/navigation";
+  import { state } from "$lib/stores";
+  let email: String;
+  let password: String;
 
   const handleSubmit = async () => {
-    await state.login(email, password)
-  }
+    await state.login(email, password);
+  };
 
-  $: if ($state.user) goto("/")
+  $: if ($state.user) goto("/");
 </script>
 
 <form on:submit|preventDefault={handleSubmit}>
